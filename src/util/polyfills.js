@@ -9,16 +9,21 @@ if (typeof Number.isNaN === "undefined") {
 /* dont polyfill in an env that does not have window */
 if (
   typeof window !== "undefined" &&
-  window.requestAnimationFrame === "undefined"
+  typeof window.requestAnimationFrame === "undefined"
 ) {
   window.requestAnimationFrame =
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
     function(callback) {
       var bindCallback = function() {
-        callback.call(null, Date.now());
+        callback.call(null, new Date().getTime());
       };
 
-      window.setTimeout(bindCallback, 1000 / 60);
+      return window.setTimeout(bindCallback, 1000 / 60);
     };
+
+  window.cancelAnimationFrame =
+    window.webkitCancelAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.clearTimeout;
 }
