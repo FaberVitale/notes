@@ -2,6 +2,10 @@
   "name": "notes",
   "description": "web app about programming, web, js etc...",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FaberVitale/notes.git"
+  },
   "author": {
     "name": "Fabrizio A. Vitale"
   },
