@@ -3,7 +3,7 @@ import * as React from "react";
 
 const defaultStyle = {
   display: "flex",
-  alingItems: "center",
+  alignItems: "center",
   justifyContent: "flex-start"
 };
 
