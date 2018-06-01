@@ -11,3 +11,11 @@ export const HTML_LANG = "en";
 
 /* border radius used by headers */
 export const HEADER_BORDER_RADIUS = 4;
+
+/* meta description content */
+export const defaultDescription =
+  "Notes, links and thoughts about programming, web design";
+
+/* meta content keywords */
+export const defaultKeywords =
+  "React, Gatsby, Web design, Javascript, js, Notes";

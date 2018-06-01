@@ -5,6 +5,9 @@ import Article from "../components/Article";
 import ArticleHeader from "../components/ArticleHeader";
 import BreadCrumb from "../components/BreadCrumb";
 import { createBreadcrumbLink } from "../components/BreadcrumbItem";
+import Helmet from "react-helmet";
+import { defaultDescription, defaultKeywords } from "../config";
+import { cleanWhiteSpace } from "../util/functions";
 
 type Props = {
   data: {
@@ -13,6 +16,21 @@ type Props = {
 };
 
 class Post extends React.Component<Props> {
+  constructor(props: Props) {
+    super(props);
+
+    let description =
+      props.data &&
+      props.data.markdownRemark &&
+      props.data.markdownRemark.excerpt
+        ? props.data.markdownRemark.excerpt
+        : defaultDescription;
+
+    this.state = {
+      description: cleanWhiteSpace(description)
+    };
+  }
+
   render() {
     const { data } = this.props;
     const { markdownRemark } = data; // data.markdownRemark holds our post data
@@ -31,6 +49,10 @@ class Post extends React.Component<Props> {
 
     return (
       <Article>
+        <Helmet>
+          <meta name="description" content={this.state.description} />
+          <meta name="keywords" content={defaultKeywords} />
+        </Helmet>
         <ArticleHeader
           title={frontmatter.title}
           nav={<BreadCrumb links={links} createLink={createBreadcrumbLink} />}
@@ -50,6 +72,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       htmlAst
+      excerpt(pruneLength: 150)
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         path

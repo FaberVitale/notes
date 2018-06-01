@@ -20,3 +20,5 @@ export const noop = (...args: Array<mixed>) => {};
 
 export const getDisplayName = (hocName: string, Comp: any) =>
   `With${hocName}(${Comp.displayName || Comp.name || "Component"})`;
+
+export const cleanWhiteSpace = (str: string) => str.replace(/\s+/g, "\u0020");

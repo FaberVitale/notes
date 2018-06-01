@@ -1,9 +1,11 @@
 //@flow
-import React from "react";
+import React, { Fragment } from "react";
 import PostListing from "../components/PostListing";
 import ArticleHeader from "../components/ArticleHeader";
 import BreadCrumb from "../components/BreadCrumb";
 import { createBreadcrumbLink } from "../components/BreadcrumbItem";
+import Helmet from "react-helmet";
+import { defaultDescription, defaultKeywords } from "../config";
 
 type Props = {
   data: {
@@ -31,7 +33,15 @@ class Section extends React.Component<Props> {
       />
     );
 
-    return <PostListing header={header} posts={posts} />;
+    return (
+      <Fragment>
+        <Helmet>
+          <meta name="description" content={defaultDescription} />
+          <meta name="keywords" content={defaultKeywords} />
+        </Helmet>
+        <PostListing header={header} posts={posts} />
+      </Fragment>
+    );
   }
 }
 

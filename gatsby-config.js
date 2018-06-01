@@ -1,8 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Notes",
-    description: "Notes, links and thoughts about programming, web design",
-    keywords: "React, Gatsby, Web design, Javascript, js, Notes"
+    title: "Notes"
   },
   plugins: [
     {
