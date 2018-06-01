@@ -2,6 +2,7 @@ import * as React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import ToolBarGroup from "../components/ToolBarGroup";
 import Typography from "@material-ui/core/Typography";
+import { HEADER_BORDER_RADIUS } from "../config";
 
 const style = theme => ({
   header: {
@@ -10,7 +11,7 @@ const style = theme => ({
     padding: 16,
     marginBottom: 32,
     color: theme.palette.primary.contrastText,
-    borderRadius: 4,
+    borderRadius: HEADER_BORDER_RADIUS,
     overflow: "hidden"
   },
   navBar: {

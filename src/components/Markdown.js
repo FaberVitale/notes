@@ -11,6 +11,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import ExtLink from "./ExtLink";
 import Link from "gatsby-link";
 import { bindPropsFactory } from "../util/functions";
+import { HEADER_BORDER_RADIUS } from "../config";
 
 const bindProps = bindPropsFactory(React.createElement);
 
@@ -67,7 +68,13 @@ const Th = withStyles(theme => ({
   head: {
     backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
-    fontWeight: "bold"
+    fontWeight: "bold",
+    "&:first-child": {
+      borderTopLeftRadius: HEADER_BORDER_RADIUS
+    },
+    "&:last-child": {
+      borderTopRightRadius: HEADER_BORDER_RADIUS
+    }
   }
 }))(TableCell);
 
