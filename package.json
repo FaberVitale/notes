@@ -32,6 +32,7 @@
     "gatsby-remark-prismjs": "^2.0.2",
     "gatsby-source-filesystem": "^1.5.36",
     "gatsby-transformer-remark": "^1.7.41",
+    "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "jss": "^9.8.1",
     "lint-staged": "^7.1.2",
@@ -45,27 +46,20 @@
     "slugify": "^1.3.0",
     "typeface-roboto": "^0.0.54"
   },
-  "keywords": [
-    "gatsby",
-    "blog",
-    "programming",
-    "notes",
-    "react"
-  ],
+  "keywords": ["gatsby", "blog", "programming", "notes", "react"],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "start": "npm run develop",
     "develop": "gatsby develop",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d public",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow",
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier", "git add"]
   }
 }

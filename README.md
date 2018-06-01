@@ -18,14 +18,14 @@ A statically rendered, progressive web app and personal blog created with:
 * `develop` | `start`: starts development server
 * `build`: build website in `/public`
 * `format`: runs prettier
-
+* `deploy`: deploys page to *githubuser.io*/notes
 ### hooks 
 * `precommit`: runs prettier
-
+* `predeploy`: runs build
 
 ## To Do
 
-- [ ] deploy
+- [x] deploy
 - [ ] add tags
 - [ ] display post stats
 - [ ] tweak prismjs theme
