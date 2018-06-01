@@ -35,7 +35,6 @@ class Post extends React.Component<Props> {
           title={frontmatter.title}
           nav={<BreadCrumb links={links} createLink={createBreadcrumbLink} />}
         />
-
         <MarkDown htmlAst={htmlAst} />
         <footer>
           <time>{frontmatter.date}</time>
