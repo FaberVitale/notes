@@ -1,3 +1,4 @@
+//@flow
 import rehypeReact from "rehype-react";
 import React from "react";
 import Typography from "@material-ui/core/Typography";
@@ -102,6 +103,6 @@ const renderAst = new rehypeReact({
   }
 }).Compiler;
 
-export default ({ htmlAst }) => {
+export default ({ htmlAst }: Object) => {
   return <div>{renderAst(htmlAst)}</div>;
 };
