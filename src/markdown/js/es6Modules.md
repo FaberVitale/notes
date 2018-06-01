@@ -6,7 +6,7 @@ title: Es6 Modules
 slug: es6-modules
 ---
 
-Es6 modules are file-based, aka one per file.
+
 The api of an es6 module is static: 
   * imports/exports can only be defined at the top level
   * once defined these bindings cannot be changed.

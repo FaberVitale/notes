@@ -11,7 +11,9 @@ slug: object-and-types
   Js is a object-oriented language where objects can be connect and share properties.
   Objects can be constructed using *constructor* functions.
 
-  A *constructor* is a function invoked with the *new* keyword.
+  A *constructor* is a function that, if invoked with *new* keyword, returns an instance.
+  
+  Technically every function but lambdas can be a constructor.
 
   Each *constructor* has a property named *prototype* that is used to implement prototype-based inheritance.
 
@@ -38,14 +40,14 @@ slug: object-and-types
   undefined is a property of the global object that cannot be modified(in es6).
   any reference that has not been assigned has value undefined.
 
-  null is not a property of the global object, is not an object even tho 
-  ```js
-  (typeof null === "object") // true
-  ```
+  Null:
+  * is not a property of the global object
+  * is not an object even tho ```typeof null === "object"``` (its a well known bug) 
+  * it is the last node of the prototype chain of every descendant of Object.
 
 ### Property Descriptors
 
-Introduced in ES6, these attrbutes describe the   
+Introduced in ES5, these attrbutes describe the   
 
 | Attribute name | Type | Description |
 | -------------- | ---- | ----------------- |

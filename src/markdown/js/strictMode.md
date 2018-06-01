@@ -12,21 +12,21 @@ slug: strict-mode
 
 Applied to the top of a function makes the whole function run in strict mode.
 Applied to the top of a script makes the whole script run in strict mode.
-es6 modules run  implicitly in strict mode.
+es6 modules run implicitly in strict mode.
 
 
 |   | Sloppy Mode  | Strict Mode |
 |---|---|--- |
 | *this default binding* | global Object |  undefined |
-| *accidental global variable* ```cart = 42;``` | applies property to global object |  throws Reference error |
+| *accidental global variable* ```car = 42;``` | applies property to global object |  throws Reference error |
 | *delete read-only prop* | fails silently |  throws TypeError |
 | *add prop to a non-extendible object* | fails silently |  throws TypeError |
 | *change property descriptor if configurable is false* | fails silently |  throws TypeError |
-| *with* | works normally |  forbidden throws Error |
+| *with* | works normally | throws Error |
 | *octal notation:* ```let a = 05;``` | works |  forbidden throws SyntaxError only ```let a = 0o5;``` works |
-| *assign properties to primitives* ```(2).a = 3; window.undefined = true; "a".a = "a";``` | fails silently |  forbidden throws TypeError |
+| *assign properties to primitives* ```(2).a = 3; window.undefined = true; "a".a = "a";``` | fails silently |  throws TypeError |
 | *eval and arguments used as variable/property names* | works |  throws TypeError |
-| *delete plainNames* ```delete undesired;``` | works |  throws SyntaxError |
+| *delete plainNames* ```delete that;``` | works |  throws SyntaxError |
 | *addings variables to scope using eval* ```eval("var r = 3;")``` | adds variable to scope | doesnt not add a variable |
 
 ## References   

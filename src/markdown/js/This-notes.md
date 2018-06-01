@@ -26,7 +26,6 @@ slug: this
 ## How it works?
   This is dynamically bound at the call-site of a function, using the following rules.
 
-
 ### Default Binding
   In a function
   * in *lazy mode* this refers to the global object, 
@@ -42,7 +41,7 @@ slug: this
     }
 
     const func = function () { 
-      logthis(); 
+      logThis(); 
     };
 
     func(); // prints the global object
@@ -57,7 +56,7 @@ slug: this
 
   ```js
     // global scope
-    let c = 0;
+    var c = 0;
     const exec = (func) => {
       if(typeof func === "function") {
         func();
