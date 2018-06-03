@@ -1,16 +1,16 @@
 {
   "assetsByChunkName": {
     "path---p-js-this": [
-      "path---p-js-this-f6908f50ddac38465936.js",
-      "path---p-js-this-f6908f50ddac38465936.js.map"
+      "path---p-js-this-ae78d3e247279e56954c.js",
+      "path---p-js-this-ae78d3e247279e56954c.js.map"
     ],
     "path---p-js": [
-      "path---p-js-26a83b168a562dde6576.js",
-      "path---p-js-26a83b168a562dde6576.js.map"
+      "path---p-js-6e89f7930e8f90ed71ca.js",
+      "path---p-js-6e89f7930e8f90ed71ca.js.map"
     ],
     "path---p-js-let-vs-var": [
-      "path---p-js-let-vs-var-ac7452207771ca301217.js",
-      "path---p-js-let-vs-var-ac7452207771ca301217.js.map"
+      "path---p-js-let-vs-var-2ccf1e2bdbbeee27b538.js",
+      "path---p-js-let-vs-var-2ccf1e2bdbbeee27b538.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-8b418cb4d6e64d9ab9fd.js",
@@ -21,16 +21,12 @@
       "path---p-web-uri-bf6e0a758de3b78d5f4a.js.map"
     ],
     "path---": [
-      "path----6308d480251f1cc7bc4c.js",
-      "path----6308d480251f1cc7bc4c.js.map"
+      "path----1b40a4f8e91e0ea03214.js",
+      "path----1b40a4f8e91e0ea03214.js.map"
     ],
     "path---p-web-http-semantics": [
-      "path---p-web-http-semantics-7916952afad94be510c1.js",
-      "path---p-web-http-semantics-7916952afad94be510c1.js.map"
-    ],
-    "path---p-web-box-model": [
-      "path---p-web-box-model-ea7718755398da3cff85.js",
-      "path---p-web-box-model-ea7718755398da3cff85.js.map"
+      "path---p-web-http-semantics-7a767b8fa897dfcefb99.js",
+      "path---p-web-http-semantics-7a767b8fa897dfcefb99.js.map"
     ],
     "component---node-modules-gatsby-plugin-offline-app-shell-js": [
       "component---node-modules-gatsby-plugin-offline-app-shell-js-5c4c5a0f7af9dc69d6d7.js",
@@ -45,20 +41,24 @@
       "path---p-js-promise-dcc8ab868ffd3f3a75c1.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-96d26a281e425c37cebd.js",
-      "component---src-layouts-index-js-96d26a281e425c37cebd.js.map"
+      "component---src-layouts-index-js-4f6b4840a45a9c8845da.js",
+      "component---src-layouts-index-js-4f6b4840a45a9c8845da.js.map"
     ],
     "path---p-js-es-6-modules": [
-      "path---p-js-es-6-modules-d781b80844a3de5dad51.js",
-      "path---p-js-es-6-modules-d781b80844a3de5dad51.js.map"
+      "path---p-js-es-6-modules-43a6d19958daf03906ff.js",
+      "path---p-js-es-6-modules-43a6d19958daf03906ff.js.map"
     ],
     "component---src-templates-article-js": [
       "component---src-templates-article-js-e550e5dcad26207a6da2.js",
       "component---src-templates-article-js-e550e5dcad26207a6da2.js.map"
     ],
     "path---index": [
-      "path---index-c06e1da54dd5d8484ec0.js",
-      "path---index-c06e1da54dd5d8484ec0.js.map"
+      "path---index-a48b36771865d9c71145.js",
+      "path---index-a48b36771865d9c71145.js.map"
+    ],
+    "path---p-web-dom-api-dimensions": [
+      "path---p-web-dom-api-dimensions-5c7c98b4eee72a427535.js",
+      "path---p-web-dom-api-dimensions-5c7c98b4eee72a427535.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-7292db4c1d719ca4380c.js",
@@ -69,29 +69,29 @@
       "commons-07e2ba6646ebb4b9c8c9.js.map"
     ],
     "path---p-js-object-and-types": [
-      "path---p-js-object-and-types-06ff19f76ab4c8ae9830.js",
-      "path---p-js-object-and-types-06ff19f76ab4c8ae9830.js.map"
+      "path---p-js-object-and-types-4a2343c1dc5764e43a33.js",
+      "path---p-js-object-and-types-4a2343c1dc5764e43a33.js.map"
     ],
     "path---404-html": [
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---p-js-strict-mode": [
-      "path---p-js-strict-mode-b1709970322ce9692827.js",
-      "path---p-js-strict-mode-b1709970322ce9692827.js.map"
+      "path---p-js-strict-mode-4003299f8a3e26a21e26.js",
+      "path---p-js-strict-mode-4003299f8a3e26a21e26.js.map"
     ],
     "path---offline-plugin-app-shell-fallback": [
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js",
       "path---offline-plugin-app-shell-fallback-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---p-web-http-syntax": [
-      "path---p-web-http-syntax-124fe6825aa65ea3eff8.js",
-      "path---p-web-http-syntax-124fe6825aa65ea3eff8.js.map"
+      "path---p-web-http-syntax-aa8d9ac7c99f96bbbdbb.js",
+      "path---p-web-http-syntax-aa8d9ac7c99f96bbbdbb.js.map"
     ],
     "app": [
-      "app-12db758f00279bcaae05.js",
+      "app-0ecd35da6d56d5adf64c.js",
       "build-js-styles.css",
-      "app-12db758f00279bcaae05.js.map",
+      "app-0ecd35da6d56d5adf64c.js.map",
       "build-js-styles.css.map"
     ],
     "path---404": [
@@ -99,8 +99,8 @@
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---p-web": [
-      "path---p-web-087ec96693ccdce1cd4b.js",
-      "path---p-web-087ec96693ccdce1cd4b.js.map"
+      "path---p-web-8b2dd8148656b6369875.js",
+      "path---p-web-8b2dd8148656b6369875.js.map"
     ]
   }
 }
