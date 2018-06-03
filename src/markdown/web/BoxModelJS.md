@@ -1,10 +1,13 @@
 ---
-path: /p/web/box-model
+path: /p/web/dom-api-dimensions
 section: web
 date: 2018-05-27T21:27:55.477Z
 title: Box Model
 slug: box-model
 ---
+
+A collection of links and brief descriptions of API used to query the dimensions
+of DOM elements using the js DOM api.
 
 * [border-box vs content-box](https://codepen.io/fabervitale/pen/MGQpja)
 * [box model visualized](http://jsfiddle.net/y8Y32/25/)
