@@ -6,6 +6,10 @@ title: Http Semantics
 slug: http-semantics
 ---
 
+HTTP is a *stateless* protocol used to transfer informations in a server-client model.
+It defines a set of methods for CRUD operations and additional methods
+and is the main protocol that powers the web.
+
 ## Methods
 
  - GET: Retrieve the current rappresentation of a resource

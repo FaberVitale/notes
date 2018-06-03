@@ -6,7 +6,12 @@ title: What's This?
 slug: this
 ---
 
-## Nomenclature
+This is a keyword that emulates the behaviour of class-based object oriented languages,
+where local methods have access to instance variables.
+
+It can be thought as an additional argument that every function implicitly has
+and it depends on the way the function is called and other factors. 
+
 
 ### Execution context
   a record created during function invocation.

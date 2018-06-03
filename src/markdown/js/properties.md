@@ -6,19 +6,17 @@ title: Object and Types
 slug: object-and-types
 ---
 
-## Definition
+Js is a object-oriented language where objects can be connect and share properties.
+Objects can be constructed using *constructor* functions.
 
-  Js is a object-oriented language where objects can be connect and share properties.
-  Objects can be constructed using *constructor* functions.
+A *constructor* is a function that, if invoked with *new* keyword, returns an instance.
 
-  A *constructor* is a function that, if invoked with *new* keyword, returns an instance.
-  
-  Technically every function but lambdas can be a constructor.
+Technically every function but lambdas can be a constructor.
 
-  Each *constructor* has a property named *prototype* that is used to implement prototype-based inheritance.
+Each *constructor* has a property named *prototype* that is used to implement prototype-based inheritance.
 
-  An object has an internal property that links  to the prototype chain and property look-ups
-  are done going-up the prototype chain.
+An object has an internal property that links  to the prototype chain and property look-ups
+are done going-up the prototype chain.
 
 ### Primitive Types
 

@@ -6,6 +6,10 @@ title: Let vs Var
 slug: let-vs-var
 ---
 
+Before the 6th edition of the ecmascript specification in javascript you could only 
+declare function-scoped variables with ```var```.
+```let``` allows to declare block-scoped variables. 
+
 |    |  `let`  |  `var` |
 |---|---|---|
 | scope | block | execution context  |

@@ -7,7 +7,7 @@ slug: box-model
 ---
 
 A collection of links and brief descriptions of API used to query the dimensions
-of DOM elements using the js DOM api.
+of DOM elements using the javascript DOM api.
 
 * [border-box vs content-box](https://codepen.io/fabervitale/pen/MGQpja)
 * [box model visualized](http://jsfiddle.net/y8Y32/25/)

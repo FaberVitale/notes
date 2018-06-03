@@ -6,6 +6,8 @@ title: Es6 Modules
 slug: es6-modules
 ---
 
+Introduced with the 6th edition of the ecmascript specification,
+modules provides a native way to segment the code in chunks. 
 
 The api of an es6 module is static: 
   * imports/exports can only be defined at the top level

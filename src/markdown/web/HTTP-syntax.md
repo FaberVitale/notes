@@ -6,10 +6,7 @@ title: Http Syntax
 slug: http-syntax
 ---
 
-## Description
-
 Http is a **stateless** application level protocol that uses a request-response model.
-
 It operates by
 exchanging messages across a reliable transport(TCP) or
 session-layer "connection".  

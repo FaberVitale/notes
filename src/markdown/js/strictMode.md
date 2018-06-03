@@ -6,9 +6,7 @@ title: Strict Mode
 slug: strict-mode
 ---
 
-
-## Description
- Opt-in using the pragma ```"use strict";```
+Opt-in using the pragma ```"use strict"```
 
 Applied to the top of a function makes the whole function run in strict mode.
 Applied to the top of a script makes the whole script run in strict mode.
