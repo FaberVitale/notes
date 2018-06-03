@@ -19,7 +19,9 @@ A statically rendered, progressive web app and personal blog created with:
 * `build`: build website in `/public`
 * `format`: runs prettier
 * `deploy`: deploys page to *githubuser.io*/notes
+* `clean`: deletes `/public`
 ### hooks 
+* `prebuild`: runs clean
 * `precommit`: runs prettier
 * `predeploy`: runs build
 
