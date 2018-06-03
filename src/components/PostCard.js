@@ -2,7 +2,7 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
-import { navigateTo } from "gatsby-link";
+import Link from "gatsby-link";
 import withStyles from "@material-ui/core/styles/withStyles";
 import OverflowFade from "./OverflowFade";
 
@@ -15,11 +15,13 @@ type Props = {
 
 const style = theme => ({
   card: {
+    display: "block",
     width: "100%",
     minWidth: 300,
     height: 160,
     padding: 16,
     position: "relative",
+    textDecoration: "none",
     marginBottom: 32,
     boxShadow: theme.shadows[1],
     outline: "none",
@@ -36,30 +38,10 @@ const style = theme => ({
 });
 
 class PostCard extends React.Component<Props> {
-  handleClick = () => {
-    /* see: https://github.com/ReactTraining/react-router/blob/master/packages/react-router-dom/modules/Link.js#L40
-     * only the primary button triggers a click
-     */
-    navigateTo(this.props.link, { landing: false });
-  };
-  /* a11y role link */
-  hadleKeyDown = ({ key }) => {
-    if (key === "Enter" || key === "\u0020") {
-      navigateTo(this.props.link, { landing: false });
-    }
-  };
-
   render() {
-    const { title, excerpt, classes } = this.props;
+    const { title, excerpt, classes, link } = this.props;
     return (
-      <Card
-        role="link"
-        className={classes.card}
-        component="section"
-        tabIndex={0}
-        onKeyDown={this.hadleKeyDown}
-        onClick={this.handleClick}
-      >
+      <Card className={classes.card} component={Link} to={link}>
         <Typography component="h3" variant="title" gutterBottom>
           {title}
         </Typography>

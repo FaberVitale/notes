@@ -34,8 +34,7 @@ module.exports = {
       options: {
         name: "Notes",
         short_name: "Notes",
-        start_url: "/notes/",
-        scope: "/notes/",
+        start_url: "./",
         background_color: "#ffffff",
         theme_color: "#03A9F4",
         display: "standalone",
