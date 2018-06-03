@@ -2,8 +2,8 @@
 path: /p/web/dom-api-dimensions
 section: web
 date: 2018-05-27T21:27:55.477Z
-title: Box Model
-slug: box-model
+title: Dom api dimesions
+slug: dom-api-dimensions
 ---
 
 A collection of links and brief descriptions of API used to query the dimensions
