@@ -49,9 +49,18 @@ const A = withStyles(theme => ({
     }
   }
 }))(({ classes, children, href, ...rest }) => {
+  const isExternal = !!href && href[0] !== "/" && href[0] !== ".";
+
+  if (isExternal) {
+    return React.createElement(
+      ExtLink,
+      { className: classes.link, href, ...rest },
+      children
+    );
+  }
   return React.createElement(
-    href && (href[0] === "/" || href[0] === ".") ? Link : ExtLink,
-    { className: classes.link, href, ...rest },
+    Link,
+    { to: href || "#", className: classes.link, ...rest },
     children
   );
 });
