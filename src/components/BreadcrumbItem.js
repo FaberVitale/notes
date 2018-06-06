@@ -12,21 +12,22 @@ type Props = {
 
 const style = theme => ({
   link: {
+    display: "block",
+    margin: "0 2px",
     cursor: "pointer",
     fontSize: "0.8em",
     color: "inherit",
     fontWeight: "bold",
     outline: "none",
-    borderRadius: 16,
     textDecoration: "none",
     padding: "4px 8px",
     "&:hover": {
-      backgroundColor: "white",
-      color: theme.palette.primary.dark
+      textDecoration: "underline"
     },
     "&:focus": {
       color: "inherit",
-      backgroundColor: theme.palette.primary.dark
+      backgroundColor: theme.palette.primary.dark,
+      borderRadius: 16
     }
   }
 });

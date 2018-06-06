@@ -8,7 +8,8 @@ type Link = {|
 
 type Props = {
   createLink: (link: Link, index: number) => React.ElementType,
-  links: Array<Link>
+  links: Array<Link>,
+  separator: React.Node
 };
 
 const style = {
@@ -18,12 +19,10 @@ const style = {
     listStyle: "none"
   },
   listItem: {
-    "&+&::before": {
-      color: "inherit",
-      padding: 4,
-      fontWeight: "bold",
-      content: '"/"'
-    }
+    display: "flex",
+    flexFlow: "row wrap",
+    alignItems: "center",
+    justifyContent: "flex-start"
   }
 };
 
@@ -34,17 +33,19 @@ class Breadcrumb extends React.Component<Props> {
         {link.label}
       </a>
     ),
-    links: []
+    links: [],
+    separator: "/"
   };
 
   render() {
-    const { createLink, links, classes, ...rest } = this.props;
+    const { createLink, links, classes, separator, ...rest } = this.props;
 
     let list = [];
 
     for (let i = 0, len = links.length; i < len; i++) {
       list.push(
         <li key={links[i].path} className={classes.listItem}>
+          {i > 0 && <div aria-hidden={true}>{separator}</div>}
           {createLink(links[i], i, len)}
         </li>
       );
