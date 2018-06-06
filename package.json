@@ -69,8 +69,10 @@
     "precommit": "flow && lint-staged"
   },
   "lint-staged": {
+    "src/**/*.{js,jsx}": [
+      "eslint --max-warnings 0"
+    ],
     "src/**/*.{js,jsx,json,css}": [
-      "eslint --max-warnings 0",
       "prettier",
       "git add"
     ]
