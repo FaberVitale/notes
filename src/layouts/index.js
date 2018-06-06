@@ -71,7 +71,7 @@ class Layout extends React.Component<Props> {
           <Helmet title={data.site.siteMetadata.title} />
           <AppBar>
             <ToolBarGroup>
-              <Hidden smUp>
+              <Hidden smUp implementation="css">
                 <MenuButton />
               </Hidden>
               <Link to="/" className={classes.heading}>
