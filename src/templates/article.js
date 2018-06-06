@@ -15,7 +15,11 @@ type Props = {
   }
 };
 
-class Post extends React.Component<Props> {
+type State = {
+  description: string
+};
+
+class Post extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
 
