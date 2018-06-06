@@ -1,11 +1,13 @@
-import React from "react";
+import * as React from "react";
 import Link from "gatsby-link";
 import withStyles from "@material-ui/core/styles/withStyles";
 
 type Props = {
   classes: MUIClasses,
   to: string,
-  current: boolean
+  current: boolean,
+  label?: string,
+  children?: React.Node
 };
 
 const style = theme => ({
@@ -38,11 +40,16 @@ class ChipLink extends React.Component<Props> {
   };
 
   render() {
-    const { classes, to, label } = this.props;
+    const { classes, to, label, children, current, ...rest } = this.props;
 
     return (
-      <Link className={classes.link} onClick={this.handleClick} to={to}>
-        {label}
+      <Link
+        className={classes.link}
+        onClick={this.handleClick}
+        to={to}
+        {...rest}
+      >
+        {label || children || "link"}
       </Link>
     );
   }
@@ -52,6 +59,15 @@ const Chip = withStyles(style)(ChipLink);
 
 export default Chip;
 
-export const createBreadcrumbLink = (link, index, len) => (
-  <Chip to={link.path} label={link.label} current={len - 1 === index} />
-);
+export const createBreadcrumbLink = (link, index, len) => {
+  const isLast = len - 1 === index;
+
+  return (
+    <Chip
+      to={link.path}
+      label={link.label}
+      current={isLast}
+      aria-current={isLast ? "page" : null}
+    />
+  );
+};
