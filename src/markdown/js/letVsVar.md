@@ -10,7 +10,7 @@ Before the 6th edition of the ecmascript specification in javascript you could o
 declare function-scoped variables with ```var```.
 ```let``` allows to declare block-scoped variables. 
 
-|    |  `let`  |  `var` |
+|    |  let  |  var |
 |---|---|---|
 | scope | block | execution context  |
 | visibility | after declaration | hoisted |

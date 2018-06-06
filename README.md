@@ -22,7 +22,7 @@ A statically rendered, progressive web app and personal blog created with:
 * `clean`: deletes `/public`
 ### hooks 
 * `prebuild`: runs clean
-* `precommit`: runs prettier
+* `precommit`: runs flow eslint and prettier
 * `predeploy`: runs build
 
 ## To Do
