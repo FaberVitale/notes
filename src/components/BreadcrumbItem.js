@@ -1,6 +1,9 @@
+//@flow
 import * as React from "react";
 import Link from "gatsby-link";
 import withStyles from "@material-ui/core/styles/withStyles";
+
+import type { CreateLink } from "./BreadCrumb";
 
 type Props = {
   classes: MUIClasses,
@@ -60,7 +63,7 @@ const Chip = withStyles(style)(ChipLink);
 
 export default Chip;
 
-export const createBreadcrumbLink = (link, index, len) => {
+export const createBreadcrumbLink: CreateLink = (link, index, len) => {
   const isLast = len - 1 === index;
 
   return (

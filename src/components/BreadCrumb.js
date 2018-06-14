@@ -1,15 +1,19 @@
-import React from "react";
+//@flow
+import * as React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 
-type Link = {|
+export type Link = {|
   path: string,
   label: string
 |};
 
+export type CreateLink = (link: Link, index: number, len: number) => React.Node;
+
 type Props = {
-  createLink: (link: Link, index: number) => React.ElementType,
+  createLink: CreateLink,
   links: Array<Link>,
-  separator: React.Node
+  separator: React.Node,
+  classes: MUIClasses
 };
 
 const style = {
