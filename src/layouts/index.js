@@ -74,11 +74,13 @@ class Layout extends React.Component<Props> {
               <Hidden smUp implementation="css">
                 <MenuButton />
               </Hidden>
-              <Link to="/" className={classes.heading}>
-                <Typography component="h1" variant="title">
-                  {data.site.siteMetadata.title}
-                </Typography>
-              </Link>
+              <Hidden xsDown implementation="css">
+                <Link to="/" className={classes.heading}>
+                  <Typography component="h1" variant="title">
+                    {data.site.siteMetadata.title}
+                  </Typography>
+                </Link>
+              </Hidden>
             </ToolBarGroup>
           </AppBar>
           <SideBar>
