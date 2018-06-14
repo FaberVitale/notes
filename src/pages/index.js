@@ -6,6 +6,11 @@ import { defaultDescription, defaultKeywords } from "../config";
 
 type Props = {
   data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    },
     allMarkdownRemark: {
       edges: Array<{
         node: { excerpt: string, frontmatter: $Shape<Frontmatter> }
@@ -22,6 +27,7 @@ class IndexPage extends React.Component<Props> {
   render() {
     const { data } = this.props;
     const posts = data.allMarkdownRemark.edges.map(r => r.node);
+    const title = data.site.siteMetadata.title;
 
     return (
       <Fragment>
@@ -32,7 +38,7 @@ class IndexPage extends React.Component<Props> {
         <PostListing
           header={
             <header style={headerStyle}>
-              <h2>Index</h2>
+              <h2>{title}</h2>
             </header>
           }
           posts={posts}
@@ -46,6 +52,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexQuery {
+    ...siteTitle
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

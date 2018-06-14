@@ -60,15 +60,19 @@ class Layout extends React.Component<Props> {
   render() {
     const { classes, children, data } = this.props;
 
-    const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
+    const title = data.site.siteMetadata.title;
+
+    const links = data.allMarkdownRemark.edges.map(({ node }) => ({
       path: node.frontmatter.path,
       title: node.frontmatter.title
     }));
 
+    links.unshift({ path: "/", title });
+
     return (
       <AppStateProvider>
         <div id="shell" className={classes.root}>
-          <Helmet title={data.site.siteMetadata.title} />
+          <Helmet title={title} />
           <AppBar>
             <ToolBarGroup>
               <Hidden smUp implementation="css">
@@ -77,14 +81,14 @@ class Layout extends React.Component<Props> {
               <Hidden xsDown implementation="css">
                 <Link to="/" className={classes.heading}>
                   <Typography component="h1" variant="title">
-                    {data.site.siteMetadata.title}
+                    {title}
                   </Typography>
                 </Link>
               </Hidden>
             </ToolBarGroup>
           </AppBar>
           <SideBar>
-            <NavMenu posts={posts} />
+            <NavMenu links={links} />
           </SideBar>
           <main className={classes.main}>{children()}</main>
         </div>
@@ -95,9 +99,20 @@ class Layout extends React.Component<Props> {
 
 export default withRoot(classes(Layout));
 
+/* extract site title */
+export const siteTitle = graphql`
+  fragment siteTitle on RootQueryType {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 /* eslint-disable-next-line no-undef */
 export const query = graphql`
-  query SiteTitleQuery {
+  query LayoutIndexQuery {
     allMarkdownRemark {
       edges {
         node {
@@ -108,10 +123,6 @@ export const query = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-      }
-    }
+    ...siteTitle
   }
 `;

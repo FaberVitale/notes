@@ -5,7 +5,7 @@ import ListItem from "@material-ui/core/ListItem";
 import Link from "gatsby-link";
 
 type Props = {
-  posts: Array<$Shape<Frontmatter>>
+  links: Array<$Shape<Frontmatter>>
 };
 
 class NavMenu extends React.Component<Props> {
@@ -16,18 +16,9 @@ class NavMenu extends React.Component<Props> {
   );
 
   render() {
-    const { posts } = this.props;
+    const { links } = this.props;
 
-    return (
-      <List component="nav">
-        {
-          <ListItem button component={Link} to={"/"}>
-            {"Index"}
-          </ListItem>
-        }
-        {posts.map(NavMenu.createListItem)}
-      </List>
-    );
+    return <List component="nav">{links.map(NavMenu.createListItem)}</List>;
   }
 }
 
