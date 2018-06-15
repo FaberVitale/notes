@@ -69,7 +69,7 @@ class Post extends React.Component<Props, State> {
         />
         <MarkDown htmlAst={htmlAst} />
         <footer>
-          <time datetime={frontmatter.date}>{`${new Date(
+          <time dateTime={frontmatter.date}>{`${new Date(
             frontmatter.date
           ).toDateString()}`}</time>
         </footer>
