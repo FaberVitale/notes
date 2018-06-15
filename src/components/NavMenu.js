@@ -34,7 +34,7 @@ class NavMenu extends React.PureComponent<Props> {
   renderProp = (activeIndex, handleClick) => {
     const { title, linksBySection, collapsibleIds } = this.props;
 
-    const sections = Object.keys(linksBySection);
+    const sections = Object.keys(linksBySection).sort();
 
     return (
       <React.Fragment>
