@@ -9,6 +9,11 @@ import { defaultDescription, defaultKeywords } from "../config";
 
 type Props = {
   data: {
+    site: {
+      siteMetadata: {
+        title: string
+      }
+    },
     allMarkdownRemark: {
       edges: Array<{ node: MarkdownRemark }>
     }
@@ -20,9 +25,10 @@ class Section extends React.Component<Props> {
     const { data } = this.props;
     const posts = data.allMarkdownRemark.edges.map(r => r.node);
     const section = posts[0].frontmatter.section;
+    const title = data.site.siteMetadata.title;
 
     const links = [
-      { path: "/", label: "Home" },
+      { path: "/", label: title },
       { path: `/p/${section}`, label: section }
     ];
 
@@ -49,6 +55,7 @@ export default Section;
 
 export const query = graphql`
   query postsBySection($section: String) {
+    ...siteTitle
     allMarkdownRemark(filter: { frontmatter: { section: { eq: $section } } }) {
       edges {
         node {

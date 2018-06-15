@@ -6,12 +6,10 @@ title: What's This?
 slug: this
 ---
 
-This is a keyword that emulates the behaviour of class-based object oriented languages,
-where local methods have access to instance variables.
-
-It can be thought as an additional argument that every function implicitly has
-and it depends on the way the function is called and other factors. 
-
+This is a keyword that class-based object oriented languages(e.g. Java)
+use to get a reference of current object instantiated from a class.
+In javascript, it is used to emulate this behavior and
+it is an additional argument that every function invocation, implicitly or not, adds.
 
 ### Execution context
   a record created during function invocation.

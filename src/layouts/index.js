@@ -57,32 +57,56 @@ const classes = withStyles(theme => ({
 }));
 
 class Layout extends React.Component<Props> {
+  linksBySection: { [section: string]: Array<$Shape<Frontmatter>> };
+
+  constructor(props: Props) {
+    super(props);
+
+    /* cache the links by section  */
+    this.linksBySection = props.data.allMarkdownRemark.edges.reduce(
+      (aggr, { node }) => {
+        const { section, path, title } = node.frontmatter;
+
+        if (!Object.prototype.hasOwnProperty.call(aggr, section)) {
+          aggr[section] = [];
+        }
+
+        aggr[section].push({
+          path,
+          title
+        });
+
+        return aggr;
+      },
+      {}
+    );
+  }
+
   render() {
     const { classes, children, data } = this.props;
 
-    const posts = data.allMarkdownRemark.edges.map(({ node }) => ({
-      path: node.frontmatter.path,
-      title: node.frontmatter.title
-    }));
+    const title = data.site.siteMetadata.title;
 
     return (
       <AppStateProvider>
         <div id="shell" className={classes.root}>
-          <Helmet title={data.site.siteMetadata.title} />
+          <Helmet title={title} />
           <AppBar>
             <ToolBarGroup>
               <Hidden smUp implementation="css">
                 <MenuButton />
               </Hidden>
-              <Link to="/" className={classes.heading}>
-                <Typography component="h1" variant="title">
-                  {data.site.siteMetadata.title}
-                </Typography>
-              </Link>
+              <Hidden xsDown implementation="css">
+                <Link to="/" className={classes.heading}>
+                  <Typography component="h1" variant="title">
+                    {title}
+                  </Typography>
+                </Link>
+              </Hidden>
             </ToolBarGroup>
           </AppBar>
           <SideBar>
-            <NavMenu posts={posts} />
+            <NavMenu linksBySection={this.linksBySection} title={title} />
           </SideBar>
           <main className={classes.main}>{children()}</main>
         </div>
@@ -93,23 +117,30 @@ class Layout extends React.Component<Props> {
 
 export default withRoot(classes(Layout));
 
-/* eslint-disable-next-line no-undef */
+/* extract site title */
+export const siteTitle = graphql`
+  fragment siteTitle on RootQueryType {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+
 export const query = graphql`
-  query SiteTitleQuery {
+  query LayoutIndexQuery {
     allMarkdownRemark {
       edges {
         node {
           frontmatter {
             path
             title
+            section
           }
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-      }
-    }
+    ...siteTitle
   }
 `;

@@ -22,3 +22,20 @@ export const getDisplayName = (hocName: string, Comp: any) =>
   `With${hocName}(${Comp.displayName || Comp.name || "Component"})`;
 
 export const cleanWhiteSpace = (str: string) => str.replace(/\s+/g, "\u0020");
+
+export const uniqueId = (function makeUniqueId() {
+  const _max = ((1 << 31) >>> 0) - 1;
+  let _base = "";
+  let _current = 0;
+
+  return function uniqueId(prefix: string = "") {
+    if (_current >= _max) {
+      _base += "0";
+      _current = 1;
+    } else {
+      _current++;
+    }
+
+    return prefix + _base + _current.toString(10);
+  };
+})();

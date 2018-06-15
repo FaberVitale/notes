@@ -19,6 +19,8 @@ const classes = withStyles(theme => ({
     justifyContent: "space-between",
     alignItems: "center",
     flexFlow: "row nowrap",
+    /* patch ie11 bug with flexbox and minHeight, see issue#6 */
+    height: APPBAR_MIN_HEIGHT - 5,
     minHeight: APPBAR_MIN_HEIGHT,
     border: 0,
     backgroundColor: theme.palette.background.paper,

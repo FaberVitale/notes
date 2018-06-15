@@ -1,3 +1,4 @@
+//@flow
 import React from "react";
 import { AppStateConsumer } from "../containers/AppState";
 import type { AppContext } from "../containers/AppState";
