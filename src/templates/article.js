@@ -69,7 +69,9 @@ class Post extends React.Component<Props, State> {
         />
         <MarkDown htmlAst={htmlAst} />
         <footer>
-          <time>{frontmatter.date}</time>
+          <time datetime={frontmatter.date}>{`${new Date(
+            frontmatter.date
+          ).toDateString()}`}</time>
         </footer>
       </Article>
     );
@@ -85,7 +87,7 @@ export const pageQuery = graphql`
       htmlAst
       excerpt(pruneLength: 150)
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date
         path
         title
         section
