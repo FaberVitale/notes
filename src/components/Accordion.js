@@ -72,7 +72,15 @@ const BaseCollapsible = class Collapsible extends React.Component<
   panelId = uniqueId("panel");
 
   render() {
-    const { onClick, open, label, classes, children, ...rest } = this.props;
+    const {
+      onClick,
+      open,
+      label,
+      index,
+      classes,
+      children,
+      ...rest
+    } = this.props;
 
     return (
       <div {...rest}>
