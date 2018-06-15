@@ -6,8 +6,14 @@ title: Flow Links
 slug: links
 ---
 
-A collection of links about the static type checker Flow
+A collection of links about Flow:
+a static type checker for JavaScript that uses annations to improve the quality of your code.
+It is developed by Facebook and is commonly used in React applications as an alternative
+to `prop-types`.
 
-* [docs](https://flow.org/en/docs/)
+### Links
+
+* [documentation](https://flow.org/en/docs/)
 * [types cheatsheet](https://www.saltycrane.com/flow-type-cheat-sheet/latest/)
 * [secret flow types](https://medium.com/netscape/secret-flow-types-86b2ebb30951)
+* [add flow to a react project](https://reactjs.org/docs/static-type-checking.html)
