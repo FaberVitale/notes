@@ -119,7 +119,7 @@ const BaseCollapsible = class Collapsible extends React.Component<
 
 export const Collapsible = withStyles(styles)(BaseCollapsible);
 
-export const Accordion = class Accordion extends React.PureComponent<
+export const Accordion = class Accordion extends React.Component<
   AccordionProps,
   AccordionState
 > {

@@ -8,6 +8,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 type Props = {
   classes: MUIClasses,
   title: string,
+  pathname: string, // pass it down just to force a re-render when path changes
   collapsibleIds: Array<string>,
   linksBySection: { [section: string]: Array<$Shape<Frontmatter>> }
 };

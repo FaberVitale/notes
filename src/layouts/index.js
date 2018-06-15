@@ -20,6 +20,7 @@ import { uniqueId } from "../util/functions";
 
 type Props = {
   children: () => React.Node,
+  location: { pathname: string },
   data: {
     allMarkdownRemark: {
       edges: Array<{ node: MarkdownRemark }>
@@ -89,7 +90,7 @@ class Layout extends React.Component<Props> {
   }
 
   render() {
-    const { classes, children, data } = this.props;
+    const { classes, children, data, location } = this.props;
 
     const title = data.site.siteMetadata.title;
 
@@ -113,6 +114,7 @@ class Layout extends React.Component<Props> {
           </AppBar>
           <SideBar>
             <NavMenu
+              pathname={location.pathname}
               collapsibleIds={this.collapsibleIds}
               linksBySection={this.linksBySection}
               title={title}
