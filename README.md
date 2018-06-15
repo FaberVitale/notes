@@ -34,7 +34,7 @@ A statically rendered, progressive web app and personal blog created with:
 - [ ] add CLI to manage posts
 - [ ] add jest and/or cypress
 - [x] change drawer content; an accordion maybe?
-- [ ] add more post
+- [ ] add more posts
 
 ## License
 
