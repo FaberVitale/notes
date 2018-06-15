@@ -57,17 +57,35 @@ const classes = withStyles(theme => ({
 }));
 
 class Layout extends React.Component<Props> {
+  linksBySection: { [section: string]: Array<$Shape<Frontmatter>> };
+
+  constructor(props: Props) {
+    super(props);
+
+    /* cache the links by section  */
+    this.linksBySection = props.data.allMarkdownRemark.edges.reduce(
+      (aggr, { node }) => {
+        const { section, path, title } = node.frontmatter;
+
+        if (!Object.prototype.hasOwnProperty.call(aggr, section)) {
+          aggr[section] = [];
+        }
+
+        aggr[section].push({
+          path,
+          title
+        });
+
+        return aggr;
+      },
+      {}
+    );
+  }
+
   render() {
     const { classes, children, data } = this.props;
 
     const title = data.site.siteMetadata.title;
-
-    const links = data.allMarkdownRemark.edges.map(({ node }) => ({
-      path: node.frontmatter.path,
-      title: node.frontmatter.title
-    }));
-
-    links.unshift({ path: "/", title });
 
     return (
       <AppStateProvider>
@@ -88,7 +106,7 @@ class Layout extends React.Component<Props> {
             </ToolBarGroup>
           </AppBar>
           <SideBar>
-            <NavMenu links={links} />
+            <NavMenu linksBySection={this.linksBySection} title={title} />
           </SideBar>
           <main className={classes.main}>{children()}</main>
         </div>
@@ -110,7 +128,6 @@ export const siteTitle = graphql`
   }
 `;
 
-/* eslint-disable-next-line no-undef */
 export const query = graphql`
   query LayoutIndexQuery {
     allMarkdownRemark {
@@ -119,6 +136,7 @@ export const query = graphql`
           frontmatter {
             path
             title
+            section
           }
         }
       }

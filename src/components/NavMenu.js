@@ -1,25 +1,61 @@
 //@flow
-import React from "react";
-import List from "@material-ui/core/List";
+import * as React from "react";
 import ListItem from "@material-ui/core/ListItem";
 import Link from "gatsby-link";
+import { Accordion, Collapsible } from "./Accordion";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 type Props = {
-  links: Array<$Shape<Frontmatter>>
+  classes: MUIClasses,
+  title: string,
+  linksBySection: { [section: string]: Array<$Shape<Frontmatter>> }
 };
 
-class NavMenu extends React.Component<Props> {
+const style = theme => ({
+  active: {
+    borderRight: `4px solid ${theme.palette.primary.main}`
+  }
+});
+
+const LinkButton = withStyles(style)(({ children, classes, ...rest }) => (
+  <ListItem activeClassName={classes.active} {...rest}>
+    {children}
+  </ListItem>
+));
+
+class NavMenu extends React.PureComponent<Props> {
   static createListItem = ({ path, title }: $Shape<Frontmatter>) => (
-    <ListItem button key={path} component={Link} to={path}>
+    <LinkButton button exact key={path} component={Link} to={path}>
       {title}
-    </ListItem>
+    </LinkButton>
   );
 
-  render() {
-    const { links } = this.props;
+  renderProp = (activeIndex, handleClick) => {
+    const { title, linksBySection } = this.props;
 
-    return <List component="nav">{links.map(NavMenu.createListItem)}</List>;
+    const sections = Object.keys(linksBySection);
+
+    return (
+      <React.Fragment>
+        {NavMenu.createListItem({ title, path: "/" })}
+        {sections.map((section, index) => (
+          <Collapsible
+            index={index}
+            key={section}
+            label={section}
+            open={activeIndex === index}
+            onClick={handleClick}
+          >
+            {linksBySection[section].map(NavMenu.createListItem)}
+          </Collapsible>
+        ))}
+      </React.Fragment>
+    );
+  };
+
+  render() {
+    return <Accordion render={this.renderProp} />;
   }
 }
 
-export default NavMenu;
+export default withStyles(style)(NavMenu);
