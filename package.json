@@ -9,7 +9,7 @@
   "author": {
     "name": "Fabrizio A. Vitale"
   },
-  "version": "1.0.5",
+  "version": "1.0.6",
   "dependencies": {
     "@material-ui/core": "^1.1.0",
     "@material-ui/icons": "^1.1.0",
