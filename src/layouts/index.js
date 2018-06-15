@@ -16,6 +16,7 @@ import ToolBarGroup from "../components/ToolBarGroup";
 import Typography from "@material-ui/core/Typography";
 import NavMenu from "../components/NavMenu";
 import Link from "gatsby-link";
+import { uniqueId } from "../util/functions";
 
 type Props = {
   children: () => React.Node,
@@ -58,6 +59,7 @@ const classes = withStyles(theme => ({
 
 class Layout extends React.Component<Props> {
   linksBySection: { [section: string]: Array<$Shape<Frontmatter>> };
+  collapsibleIds: Array<string>;
 
   constructor(props: Props) {
     super(props);
@@ -79,6 +81,10 @@ class Layout extends React.Component<Props> {
         return aggr;
       },
       {}
+    );
+
+    this.collapsibleIds = Object.keys(this.linksBySection).map(
+      uniqueId.bind(null, "panel")
     );
   }
 
@@ -106,7 +112,11 @@ class Layout extends React.Component<Props> {
             </ToolBarGroup>
           </AppBar>
           <SideBar>
-            <NavMenu linksBySection={this.linksBySection} title={title} />
+            <NavMenu
+              collapsibleIds={this.collapsibleIds}
+              linksBySection={this.linksBySection}
+              title={title}
+            />
           </SideBar>
           <main className={classes.main}>{children()}</main>
         </div>

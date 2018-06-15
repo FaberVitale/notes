@@ -8,6 +8,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 type Props = {
   classes: MUIClasses,
   title: string,
+  collapsibleIds: Array<string>,
   linksBySection: { [section: string]: Array<$Shape<Frontmatter>> }
 };
 
@@ -31,7 +32,7 @@ class NavMenu extends React.PureComponent<Props> {
   );
 
   renderProp = (activeIndex, handleClick) => {
-    const { title, linksBySection } = this.props;
+    const { title, linksBySection, collapsibleIds } = this.props;
 
     const sections = Object.keys(linksBySection);
 
@@ -42,6 +43,7 @@ class NavMenu extends React.PureComponent<Props> {
           <Collapsible
             index={index}
             key={section}
+            id={collapsibleIds[index]}
             label={section}
             open={activeIndex === index}
             onClick={handleClick}

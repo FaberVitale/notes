@@ -10,6 +10,7 @@ type CollapsibleProps = {
   open: boolean,
   onClick: (index: number) => void,
   index: number,
+  id: ?string,
   label: string,
   children: React.Node
 };
@@ -62,14 +63,19 @@ const styles = theme => ({
 const BaseCollapsible = class Collapsible extends React.Component<
   CollapsibleProps
 > {
+  panelId: string;
+
+  constructor(props: CollapsibleProps) {
+    super(props);
+    this.panelId = props.id || uniqueId("panel");
+  }
+
   handleButtonClick = () => {
     const { index, onClick } = this.props;
     onClick(index);
   };
 
   static style = {};
-
-  panelId = uniqueId("panel");
 
   render() {
     const {
