@@ -6,7 +6,7 @@ title: Object and Types
 slug: object-and-types
 ---
 
-Js is a object-oriented language where objects can be connect and share properties.
+Js is an object-oriented language where objects can be connect and share properties.
 Objects can be constructed using *constructor* functions.
 
 A *constructor* is a function that, if invoked with *new* keyword, returns an instance.

@@ -7,7 +7,7 @@ slug: links
 ---
 
 A collection of links about Flow:
-a static type checker for JavaScript that uses annotions to improve the quality of your code.
+a static type checker for JavaScript that uses annotations to improve the quality of your code.
 It is developed by Facebook and is commonly used in React applications as an alternative
 to `prop-types`.
 

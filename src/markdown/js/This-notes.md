@@ -92,7 +92,7 @@ it is an additional argument that every function invocation, implicitly or not, 
   are a way to explicitly set the context at the call-site.
 
   Another tool to hard bind a context, bypassing the call-site problem is a helper
-  method called *bind* that is In the prototype of Function.
+  method called *bind* that is in the prototype of Function.
   It is used to partially apply this and the other arguments of a function.
   A bounded function will ignore this from the call-site and use the bounded one. 
 
