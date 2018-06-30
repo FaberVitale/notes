@@ -35,7 +35,17 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     const sections = result.data.allMarkdownRemark.edges.reduce(
       (aggr, { node }) => {
         const section = /^\/p\/([^/?#]+)/.exec(node.frontmatter.path);
-        aggr.add(section[1]);
+
+        if (section) {
+          aggr.add(section[1]);
+        } else {
+          const error = new Error("Received a markdown file with invalid path");
+
+          error.node = node; // grab a reference to the node for debugging
+
+          throw error;
+        }
+
         return aggr;
       },
       new Set()
