@@ -1,0 +1,2 @@
+webpackJsonp([0xfccc3d3c8e2d],{504:function(t,e){t.exports={data:{site:{siteMetadata:{title:"Notes"}},allMarkdownRemark:{edges:[{node:{excerpt:"A collection of links about Flow:\na static type checker for JavaScript that uses annotations to improve the quality of your code.\nIt is developed by Facebook and is commonly used…",frontmatter:{path:"/p/flow/links",title:"Flow Links",section:"flow"}}}]}},pathContext:{section:"flow"}}}});
+//# sourceMappingURL=path---p-flow-2a6652df2e47417a5dd6.js.map
